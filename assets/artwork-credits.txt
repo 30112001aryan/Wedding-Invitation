@@ -1,0 +1,35 @@
+DEHRADUN LANDMARK WATERCOLORS
+
+These coloured architectural sketches were created with OpenAI ImageGen
+using the following photographs as architectural references. The photos
+were transformed into isolated watercolor artwork; the sketches are
+illustrations, not photographs or images of the wedding venue.
+
+CLOCK TOWER
+Reference: "Ghanta Ghar (Clock tower), Dehradun.jpg"
+Photographer: Debasish Dey
+Source: https://commons.wikimedia.org/wiki/File:Ghanta_Ghar_(Clock_tower),_Dehradun.jpg
+Reference photograph released into the public domain by its author.
+Changes: watercolor and coloured-pencil transformation, daylight colours,
+background removal and a small landscaped base.
+Website asset: clock-tower-watercolor.webp
+
+FOREST RESEARCH INSTITUTE
+Reference: "Front View of F.R.I., Dehradun.jpg"
+Photographer: Shivanjan
+Source: https://commons.wikimedia.org/wiki/File:Front_View_of_F.R.I.,_Dehradun.jpg
+Reference licence: Creative Commons Attribution-ShareAlike 3.0 Unported
+https://creativecommons.org/licenses/by-sa/3.0/
+Changes: watercolor and coloured-pencil transformation, isolated facade,
+background removal and simplified landscaping.
+The adapted FRI sketch is distributed under the same CC BY-SA 3.0 licence.
+Website asset: fri-watercolor.webp
+
+COUPLE PHOTOGRAPHS
+Supplied by the family. Photography credit: Rohini Studio Photography,
+as marked on the original images. Website copies are resized for display.
+No AI alteration of the couple's faces or appearance.
+
+DOON VALLEY BACKGROUND
+Original atmospheric illustration created with OpenAI ImageGen for this
+invitation. It is not a photograph of the final venue.
