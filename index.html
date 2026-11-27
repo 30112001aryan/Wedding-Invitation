@@ -54,8 +54,8 @@
       fetchpriority="high"
     />
     <link rel="preload" href="assets/pahadi-jharokha.png" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20261127-jharokha" />
-    <script src="app.js?v=20261127-jharokha" type="module"></script>
+    <link rel="stylesheet" href="styles.css?v=20261127-door-reveal" />
+    <script src="app.js?v=20261127-door-reveal" type="module"></script>
     <noscript
       ><style>
         #day-16[hidden] {
@@ -107,7 +107,6 @@
         <a href="#invitation">The invitation</a>
         <a href="#celebrations">Celebrations</a>
         <a href="#dehradun">Dehradun</a>
-        <a href="#guest-guide">Guest guide</a>
       </nav>
       <a class="header-date" href="wedding.ics" download
         >Save the date <span aria-hidden="true">↗</span></a
@@ -289,48 +288,19 @@
       </section>
 
       <section
-        class="doon-keepsake reveal"
-        id="dehradun"
-        aria-labelledby="destination-title"
-      >
-        <div class="landmark">
-          <img
-            src="assets/clock-tower-watercolor.webp"
-            width="800"
-            height="1200"
-            loading="lazy"
-            decoding="async"
-            alt="Coloured watercolor sketch of Dehradun's terracotta and cream six-sided Clock Tower"
-          />
-          <span>Clock Tower</span>
-        </div>
-        <div class="keepsake-copy">
-          <p class="eyebrow">In the heart of the Doon Valley</p>
-          <h2 id="destination-title">See you in<br /><em>Dehradun.</em></h2>
-        </div>
-        <div class="landmark landmark-fri">
-          <img
-            src="assets/fri-watercolor.webp"
-            width="1500"
-            height="500"
-            loading="lazy"
-            decoding="async"
-            alt="Coloured watercolor sketch of Forest Research Institute's red-brick facade, twin white domes and central arched entrance"
-          />
-          <span>Forest Research Institute</span>
-        </div>
-      </section>
-
-      <section
         class="guest-guide section-pad"
-        id="guest-guide"
+        id="dehradun"
         aria-labelledby="guide-title"
       >
+        <div class="guide-backdrop" aria-hidden="true">
+          <img class="guide-panorama" src="assets/dehradun-guest-backdrop.png" width="1800" height="600" alt="" loading="lazy" decoding="async" />
+          <img class="guide-panorama-mobile" src="assets/dehradun-guest-backdrop.png" width="1800" height="600" alt="" loading="lazy" decoding="async" />
+        </div>
         <div class="section-heading reveal">
           <p class="eyebrow">For our guests</p>
-          <h2 id="guide-title">A few little details.</h2>
+          <h2 id="guide-title">See you in <em>Dehradun.</em></h2>
         </div>
-        <div class="guide-grid">
+        <div class="guide-grid" id="guest-guide">
           <article class="guide-note reveal">
             <h3>Getting here</h3>
             <p>

@@ -1,3 +1,25 @@
+DEHRADUN GUEST-INFORMATION BACKDROP
+Website asset: dehradun-guest-backdrop.png
+Created with OpenAI ImageGen by adapting and composing the references below
+into a watercolor panorama with simplified greenery and daylight colours.
+The composite artwork is distributed under CC BY-SA 4.0:
+https://creativecommons.org/licenses/by-sa/4.0/
+This licence applies to the composite image, not to the entire website.
+
+Clock Tower: existing sketch based on Debasish Dey's public-domain photograph.
+https://commons.wikimedia.org/wiki/File:Ghanta_Ghar_(Clock_tower),_Dehradun.jpg
+FRI: existing sketch based on Shivanjan's photograph, CC BY-SA 3.0.
+https://commons.wikimedia.org/wiki/File:Front_View_of_F.R.I.,_Dehradun.jpg
+https://creativecommons.org/licenses/by-sa/3.0/
+IMA / Chetwode Hall: "Chetwode ima Dehradun.jpg", Freakbad 091207, CC BY-SA 4.0.
+https://commons.wikimedia.org/wiki/File:Chetwode_ima_Dehradun.jpg
+Great Stupa: "Front view of the Great Stupa of Mindrolling reproduced in
+Dehradun.jpg", Prashanthns, CC BY-SA 4.0.
+https://commons.wikimedia.org/wiki/File:Front_view_of_the_Great_Stupa_of_Mindrolling_reproduced_in_Dehradun.jpg
+Buddha statue: "BuddhaStatueDehradun.jpg", Teemu Kiiski, CC BY-SA 2.5.
+https://commons.wikimedia.org/wiki/File:BuddhaStatueDehradun.jpg
+https://creativecommons.org/licenses/by-sa/2.5/
+
 DEHRADUN LANDMARK WATERCOLORS
 
 These coloured architectural sketches were created with OpenAI ImageGen

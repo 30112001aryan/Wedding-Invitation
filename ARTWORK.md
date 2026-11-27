@@ -1,5 +1,14 @@
 # Custom Dehradun illustration
 
+## Faded Dehradun guest-information backdrop
+
+Created with the built-in OpenAI ImageGen tool. Final website asset: `assets/dehradun-guest-backdrop.png` (1800 × 600, transparency preserved). It combines the two existing landmark sketches with photographic references for IMA, Mindrolling's Great Stupa and the Clement Town Buddha statue. Reference authors, source links and licences are recorded in `assets/artwork-credits.txt`; the composite is distributed under CC BY-SA 4.0. The artwork is faded behind the guest notes and shows complementary halves on narrow phones, replacing the standalone landmark section.
+
+### Generation prompt
+
+Use case: compositing. Asset type: a single panoramic decorative watercolor backdrop for the guest-information section of a refined Dehradun wedding invitation. Use all five supplied references, preserving their recognizable architectural silhouettes and proportions. Image 1 is the existing Dehradun Clock Tower watercolor; image 2 is the existing Forest Research Institute watercolor. Image 3 is an architectural photo reference ONLY for IMA's Chetwode Hall: retain its broad red-brick facade, white colonnade, central entrance and single slender white clock tower, but render in soft daylight watercolor. Image 4 is an architectural reference for Mindrolling's Great Stupa: retain its white stepped base and rounded white stupa, ornate gold front panel and tapered golden spire. Image 5 is a reference for the tall standing golden Buddha in Clement Town with its distinctive oval lattice halo. Create one harmonious, loosely connected illustrated Doon Valley panorama using fine ink and watercolor matching images 1 and 2. Arrange Clock Tower and FRI together in the left 45% of the canvas; arrange Chetwode Hall, the Great Stupa and the standing Buddha in the right 45%, with the Mindrolling/Buddha pair together. Leave the central 10% and the upper half very airy, with only extremely pale hazy foothill washes; the buildings sit along a low common baseline. This clear middle gap allows the panorama to be viewed as two complementary halves on phones without cutting a landmark. Keep each landmark distinct and recognizable; do not merge facades or invent generic palace buildings. A few delicate sal/pine trees and soft sage foothills unify the scene. Landscape ultra-wide 3:1 composition, entire landmark silhouettes visible with small margins, no cropping. Restrained warm terracotta, dusty rose, antique gold and sage green. Graceful watercolor edges with genuinely transparent background around and above the skyline. The website will fade this image behind readable text, so keep the watercolor light and delicate but retain architectural detail. No lettering, no labels, no people, no vehicles, no flags, no signage, no logos, no frame.
+
+
 ## Coloured landmark sketches
 
 The original generic SVG outlines have been replaced with ImageGen watercolor sketches based on actual photographs. Site assets are `assets/clock-tower-watercolor.webp` and `assets/fri-watercolor.webp`, both with transparency preserved. Full references, transformation notes and licence information are in [artwork-credits.txt](assets/artwork-credits.txt), also linked from the website footer.
@@ -27,7 +36,7 @@ Primary request: A beautiful fine-art gouache and watercolor painted view of the
 
 ## Pahadi jharokha cover
 
-Created with the built-in OpenAI ImageGen tool. Website asset: `assets/pahadi-jharokha.png` (900 × 1200, transparency preserved). The frame stays in place while CSS crops of the two shutters open. The supplied family logo is displayed on the seal with CSS cropping and tinting; its drawing is unchanged.
+Created with the built-in OpenAI ImageGen tool. Website asset: `assets/pahadi-jharokha.png` (900 × 1200, transparency preserved). CSS crops of the two shutters open inside the frame, followed by a synchronized camera and aperture reveal through the doorway. Responsive sizing keeps the complete frame visible and nearly edge to edge on phones. The supplied family logo is displayed on the seal with CSS cropping and tinting; its drawing is unchanged.
 
 The architectural direction follows Uttarakhand's Likhai tradition of floral and geometric woodcarving, described by [Asia InCH](https://asiainch.org/craft/likhaiwood-carving-of-uttrakhand/) and [Voices of Rural India](https://www.voicesofruralindia.org/the-disappearing-craft-of-likhai/). This is an original illustration inspired by that tradition.
 

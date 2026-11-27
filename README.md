@@ -17,12 +17,12 @@ Personalise a guest's greeting with `?n=Anita%20%26%20family`. The greeting is i
 ## What is ready
 
 - Custom Doon Valley watercolor, existing family monogram and locally hosted editorial fonts.
-- One real engagement portrait in an arched frame with a gentle zoom, plus coloured watercolor sketches of Clock Tower and Forest Research Institute based on photo references.
+- One real engagement portrait in an arched frame with a gentle zoom. A single faded Dehradun panorama sits behind the guest notes, combining Clock Tower, FRI, IMA's Chetwode Hall and Mindrolling's Great Stupa and Buddha statue. The separate landmark section has been removed to shorten the invitation.
 - Gentle entry animation, drifting petals, scroll reveals and reduced-motion support.
 - Day selectors, India-time countdown and a single calendar download.
 - Watercolor ceremony motifs, a decorated vintage car for the Baraat and an Aipan-inspired closing accent.
 - Dedicated mobile mandap artwork that keeps the full pavilion visible.
-- A Pahadi jharokha with Likhai-inspired woodcarving opens its shutters when guests click the wax seal bearing the family's supplied monogram. That tap starts the music with a four-second fade-in; a small speaker icon then controls mute/unmute. The locally hosted 80-second middle excerpt has reduced volume and four-second fades. Source and licence are in `assets/artwork-credits.txt`.
+- A Pahadi jharokha with Likhai-inspired woodcarving opens its shutters when guests click the wax seal bearing the family's supplied monogram. The frame nearly fills the phone width, and a synchronized camera and doorway aperture reveal the invitation through the opening. Completion follows the native animations rather than a fixed timeout. The tap starts the music with a four-second fade-in; a small speaker icon then controls mute/unmute. The locally hosted 80-second middle excerpt has reduced volume and four-second fades. Source and licence are in `assets/artwork-credits.txt`.
 - The cover supports keyboard activation, Escape dismissal and reduced-motion settings. Without JavaScript, the invitation remains available directly with native audio controls.
 - Mobile layouts, keyboard focus styles and a skip link.
 

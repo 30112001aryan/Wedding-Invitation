@@ -36,6 +36,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
+  scrollbar-gutter: stable;
 }
 body {
   margin: 0;
@@ -693,67 +694,50 @@ h1 em {
   margin-top: 27px;
   letter-spacing: 0.2px;
 }
-.doon-keepsake {
-  max-width: 1220px;
-  margin: auto;
-  padding: 48px 24px 36px;
-  display: grid;
-  grid-template-columns: 0.8fr 1fr 1.8fr;
-  align-items: end;
-  gap: 30px;
-  border-bottom: 1px solid var(--line);
-}
-.landmark {
-  text-align: center;
-}
-.landmark img {
-  display: block;
-  width: 100%;
-  max-width: 215px;
-  height: 260px;
-  margin: auto auto 14px;
-  object-fit: contain;
-  object-position: center bottom;
-}
-.landmark-fri img {
-  max-width: 600px;
-}
-.landmark > span {
-  font-size: 8px;
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
-  color: #796044;
-}
-.keepsake-copy {
-  text-align: center;
-  align-self: center;
-}
-.keepsake-copy .eyebrow {
-  font-size: 8px;
-  letter-spacing: 1.8px;
-}
-.doon-keepsake.visible .landmark img {
-  animation: sketch-reveal 1.8s ease-out both;
-}
-.doon-keepsake.visible .landmark-fri img {
-  animation-delay: 0.2s;
-}
-@keyframes sketch-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 @keyframes portrait-drift {
   from {
     transform: scale(1);
   }
   to {
     transform: scale(1.035);
+  }
+}
+.guest-guide {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--paper);
+}
+.guide-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.18;
+}
+.guide-backdrop img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+.guide-panorama-mobile {
+  display: none;
+}
+@media (max-width: 520px) {
+  .guide-backdrop .guide-panorama {
+    top: 24px;
+    bottom: auto;
+    width: 200%;
+  }
+  .guide-backdrop .guide-panorama-mobile {
+    display: block;
+    left: auto;
+    right: 0;
+    width: 200%;
   }
 }
 .guide-grid {
@@ -899,10 +883,6 @@ footer a span {
   align-self: start;
   font-size: 30px;
   margin: 5px 0 0;
-}
-.keepsake-copy h2 {
-  font-size: 43px;
-  margin-top: 15px;
 }
 .venue-pending {
   max-width: 900px;
@@ -1055,8 +1035,7 @@ footer a span {
   .site-header nav a {
     font-size: 11px;
   }
-  .site-header nav a:first-child,
-  .site-header nav a:last-child {
+  .site-header nav a:first-child {
     display: none;
   }
   .header-date {
@@ -1224,22 +1203,6 @@ footer a span {
     max-width: 350px;
     margin: 24px auto 0;
   }
-  .doon-keepsake {
-    grid-template-columns: 1fr 1.5fr;
-    gap: 22px;
-    padding-top: 39px;
-  }
-  .keepsake-copy {
-    grid-column: 1 / -1;
-    grid-row: 1;
-  }
-  .landmark img {
-    height: 190px;
-  }
-  .landmark > span {
-    font-size: 7px;
-    letter-spacing: 1px;
-  }
   .guide-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -1322,10 +1285,6 @@ footer a span {
     line-height: 1.1;
     margin: 4px 0 0;
   }
-  .keepsake-copy h2 {
-    font-size: 38px;
-    margin-top: 12px;
-  }
   .guide-grid {
     margin-top: 24px;
     gap: 24px;
@@ -1368,7 +1327,6 @@ footer a span {
   background:
     linear-gradient(#fff8eefc, #fff8eef5 44%, #fff8eeb8 76%, #fff8ee88),
     url("assets/dehradun-watercolor.jpg") center bottom / cover;
-  transition: opacity 0.9s ease 0.35s;
 }
 .welcome-address {
   position: absolute;
@@ -1408,6 +1366,7 @@ footer a span {
   width: min(48svh, 450px, calc(100vw - 36px));
   aspect-ratio: 3 / 4;
   transform: translate(-50%, -50%);
+  transform-origin: 50% 54.2%;
   perspective: 1000px;
 }
 .jharokha-frame {
@@ -1416,7 +1375,6 @@ footer a span {
   /* The rectangle follows the shutter edges in the shared 3:4 illustration. */
   clip-path: polygon(evenodd, 0 0, 100% 0, 100% 100%, 0 100%, 0 0,
     24.25% 29.25%, 24.25% 79.15%, 75.75% 79.15%, 75.75% 29.25%, 24.25% 29.25%);
-  transition: opacity 0.75s ease 0.9s;
 }
 .jharokha-door {
   position: absolute;
@@ -1426,14 +1384,14 @@ footer a span {
   overflow: hidden;
   background: #75452e;
   backface-visibility: hidden;
-  transition: transform 1.5s cubic-bezier(0.55, 0.05, 0.2, 1) 0.15s;
+  transition: transform 1.6s cubic-bezier(0.35, 0.02, 0.15, 1) 0.12s;
 }
 .jharokha-door img {
   position: absolute;
   top: -58.6172%;
   width: 388.3495%;
   max-width: none;
-  height: auto;
+  height: 200.4008%;
   pointer-events: none;
 }
 .jharokha-left {
@@ -1531,16 +1489,48 @@ footer a span {
 .is-opening .jharokha-right {
   transform: rotateY(105deg);
 }
+.is-opening .jharokha-stage,
+.is-opening .cover-backdrop {
+  will-change: transform, clip-path;
+}
 .is-opening .welcome-seal {
   transform: translate(-50%, -65%) rotate(-10deg) scale(1.12);
   opacity: 0;
   pointer-events: none;
 }
 .is-opening .welcome-address,
-.is-opening .welcome-recipient,
-.is-opening .jharokha-frame,
-.is-opening .cover-backdrop {
+.is-opening .welcome-recipient {
   opacity: 0;
+}
+@media (max-width: 760px) and (orientation: portrait) {
+  .welcome-address {
+    top: max(16px, env(safe-area-inset-top));
+  }
+  .welcome-address .eyebrow {
+    margin-bottom: 6px;
+    font-size: 7px;
+  }
+  .welcome-address h2 {
+    font-size: clamp(30px, 8vw, 36px);
+  }
+  .welcome-date {
+    margin-top: 6px;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+  .jharokha-stage {
+    top: 112px;
+    bottom: max(52px, calc(env(safe-area-inset-bottom) + 40px));
+    width: calc(100vw - 12px);
+    height: auto;
+    max-height: calc((100vw - 12px) * 1.7);
+    aspect-ratio: auto;
+    transform: translateX(-50%);
+  }
+  .welcome-recipient {
+    bottom: max(14px, env(safe-area-inset-bottom));
+    font-size: 19px;
+  }
 }
 @media (max-height: 520px) and (orientation: landscape) {
   .welcome-address {

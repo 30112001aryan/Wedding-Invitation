@@ -17,6 +17,26 @@ export function guestName(search) {
     .slice(0, 80);
 }
 
+export function openingGeometry(rect, width, height) {
+  const doorWidth = rect.right - rect.left;
+  const doorHeight = rect.bottom - rect.top;
+  const scale = Math.max(width / doorWidth, height / doorHeight) * 1.12;
+  const destination = {
+    left: (width - doorWidth * scale) / 2,
+    right: (width + doorWidth * scale) / 2,
+    top: (height - doorHeight * scale) / 2,
+    bottom: (height + doorHeight * scale) / 2,
+  };
+  return {
+    scale,
+    x: width / 2 - (rect.left + rect.right) / 2,
+    y: height / 2 - (rect.top + rect.bottom) / 2,
+    keyframes: [rect, destination].map(({ left, top, right, bottom }) => ({
+      clipPath: `polygon(evenodd, 0 0, 100% 0, 100% 100%, 0 100%, 0 0, ${left}px ${top}px, ${left}px ${bottom}px, ${right}px ${bottom}px, ${right}px ${top}px, ${left}px ${top}px)`,
+    })),
+  };
+}
+
 if (typeof document !== "undefined") {
   const music = document.getElementById("invitation-music");
   const musicToggle = document.getElementById("music-toggle");
@@ -53,9 +73,32 @@ if (typeof document !== "undefined") {
       // Start within the seal's click so mobile browsers allow the audio.
       music.play().catch(syncMusic);
       openInvitation.disabled = true;
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        welcomeCover.close();
+        return;
+      }
+      const stage = welcomeCover.querySelector(".jharokha-stage");
+      const backdrop = welcomeCover.querySelector(".cover-backdrop");
+      const left = welcomeCover.querySelector(".jharokha-left").getBoundingClientRect();
+      const right = welcomeCover.querySelector(".jharokha-right").getBoundingClientRect();
+      const geometry = openingGeometry({
+        left: left.left, right: right.right, top: left.top, bottom: left.bottom,
+      }, welcomeCover.clientWidth, welcomeCover.clientHeight);
+      const transform = new DOMMatrix(getComputedStyle(stage).transform);
+      const destination = transform.translate(geometry.x, geometry.y).scale(geometry.scale);
+      const timing = {
+        duration: 2200, delay: 180, easing: "cubic-bezier(0.35, 0.02, 0.12, 1)", fill: "forwards",
+      };
+      backdrop.style.clipPath = geometry.keyframes[0].clipPath;
       welcomeCover.classList.add("is-opening");
-      setTimeout(() => welcomeCover.close(),
-        matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 1800);
+      const camera = stage.animate([
+        { transform: transform.toString() }, { transform: destination.toString() },
+      ], timing);
+      const reveal = backdrop.animate(geometry.keyframes, timing);
+      Promise.all([camera.finished, reveal.finished]).then(
+        () => welcomeCover.close(),
+        () => welcomeCover.close(),
+      );
     }, { once: true });
   } else {
     musicToggle.hidden = false;

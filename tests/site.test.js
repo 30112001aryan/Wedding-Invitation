@@ -1,7 +1,18 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { readFileSync } from "node:fs";
-import { remainingTime, guestName, weddingDay } from "../app.js";
+import { remainingTime, guestName, weddingDay, openingGeometry } from "../app.js";
+
+test("the doorway reveal centres its opening and fills portrait and wide screens", () => {
+  for (const [width, height] of [[320, 568], [390, 844], [844, 390], [1440, 900]]) {
+    const rect = { left: width * 0.3, right: width * 0.7, top: height * 0.4, bottom: height * 0.8 };
+    const reveal = openingGeometry(rect, width, height);
+    assert.ok((rect.right - rect.left) * reveal.scale > width);
+    assert.ok((rect.bottom - rect.top) * reveal.scale > height);
+    assert.equal((rect.left + rect.right) / 2 + reveal.x, width / 2);
+    assert.equal((rect.top + rect.bottom) / 2 + reveal.y, height / 2);
+  }
+});
 
 test("music waits for the invitation seal and retains an accessible speaker control", () => {
   const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
