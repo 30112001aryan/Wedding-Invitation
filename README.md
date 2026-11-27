@@ -16,10 +16,12 @@ Personalise a guest's greeting with `?n=Anita%20%26%20family`. The greeting is i
 
 ## What is ready
 
-- Custom Doon Valley watercolor, existing family monogram, locally hosted calligraphy and editorial fonts.
+- Custom Doon Valley watercolor, existing family monogram and locally hosted editorial fonts.
 - One real engagement portrait in an arched frame with a gentle zoom, plus coloured watercolor sketches of Clock Tower and Forest Research Institute based on photo references.
 - Gentle entry animation, drifting petals, scroll reveals and reduced-motion support.
-- Day selectors, India-time countdown, native expandable guest questions and downloadable calendar events.
+- Day selectors, India-time countdown and a single calendar download.
+- Watercolor ceremony motifs, a decorated vintage car for the Baraat and an Aipan-inspired closing accent.
+- Dedicated mobile mandap artwork that keeps the full pavilion visible.
 - Mobile layouts, keyboard focus styles and a skip link.
 
 ## Before sharing with guests

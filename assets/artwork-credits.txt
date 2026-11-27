@@ -33,3 +33,9 @@ No AI alteration of the couple's faces or appearance.
 DOON VALLEY BACKGROUND
 Original atmospheric illustration created with OpenAI ImageGen for this
 invitation. It is not a photograph of the final venue.
+
+CEREMONY WATERCOLORS AND BARAAT CAR
+Original illustrations created with OpenAI ImageGen for this invitation.
+ceremony-watercolors.webp contains the event motifs and Aipan-inspired art.
+baraat-vintage-car.jpg replaces the horse motif for the Baraat, matching the
+family's planned vintage wedding car and the watercolor illustration style.

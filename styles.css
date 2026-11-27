@@ -18,12 +18,6 @@
   font-weight: 400 600;
   font-display: swap;
 }
-@font-face {
-  font-family: Pinyon;
-  src: url("assets/fonts/pinyon.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-}
 :root {
   --paper: #fff8ee;
   --paper-deep: #f5e9d8;
@@ -143,7 +137,7 @@ p {
   color: var(--wine);
 }
 .section-pad {
-  padding: 110px max(6vw, 24px);
+  padding: 80px max(6vw, 24px);
 }
 .site-header {
   height: 88px;
@@ -313,13 +307,6 @@ h1 em {
   top: -7px;
   animation: rise-in 1.1s 0.6s both;
 }
-.hero-message {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-style: italic;
-  color: #5d493b;
-  animation: rise-in 1s 0.8s both;
-}
 .hero-date {
   display: flex;
   justify-content: center;
@@ -368,15 +355,6 @@ h1 em {
 }
 .hero .button {
   animation: rise-in 1s 1.1s both;
-}
-.weekend-note {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 16px;
-  margin-top: 14px;
-  color: #51252e;
-  text-shadow: 0 1px 5px #faf6ee;
-  animation: rise-in 1s 1.25s both;
 }
 .scroll-cue {
   position: absolute;
@@ -468,7 +446,7 @@ h1 em {
   justify-content: center;
   align-items: center;
   gap: 80px;
-  min-height: 151px;
+  min-height: 125px;
   padding: 28px 6%;
   border-bottom: 1px solid var(--line);
   background: #f8f3e9;
@@ -521,7 +499,7 @@ h1 em {
 }
 .couple-portrait {
   width: 100%;
-  max-width: 335px;
+  max-width: 310px;
   margin: auto;
   text-align: center;
 }
@@ -549,21 +527,6 @@ h1 em {
 }
 .couple-portrait.visible img {
   animation: portrait-drift 18s ease-in-out 2 alternate both;
-}
-.couple-portrait figcaption {
-  margin-top: 19px;
-}
-.couple-portrait .eyebrow {
-  display: block;
-  margin-top: 11px;
-  font-size: 8px;
-  letter-spacing: 2px;
-}
-.portrait-quote {
-  font-family: Pinyon, cursive;
-  font-size: 34px;
-  color: var(--wine);
-  line-height: 1.3;
 }
 .invitation-copy > .eyebrow {
   margin-bottom: 22px;
@@ -624,7 +587,7 @@ h1 em {
   margin: 0 auto;
 }
 .section-heading h2 {
-  margin: 19px 0 22px;
+  margin: 15px 0 12px;
 }
 .section-heading > p:last-child {
   font-size: 14px;
@@ -635,7 +598,7 @@ h1 em {
 .day-switch {
   display: flex;
   justify-content: center;
-  margin: 39px auto 37px;
+  margin: 28px auto;
 }
 .day-button {
   background: transparent;
@@ -682,7 +645,7 @@ h1 em {
   position: relative;
   background: #fbf7ed;
   border: 1px solid #daccb6;
-  padding: 30px 30px 33px;
+  padding: 23px 26px 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -706,160 +669,26 @@ h1 em {
   border-color: #d9abb8;
   border-top: 3px solid #b96785;
 }
-.morning-card {
-  grid-column: 1 / -1;
-  padding-block: 22px;
-}
-.morning-card h3 {
-  margin-block: 8px;
-}
-.morning-card > p:not(.event-time) {
-  max-width: none;
-}
-.event-art {
-  width: 145px;
-  height: 118px;
-  margin: 0 auto 18px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: radial-gradient(ellipse, #e6d2a655, transparent 70%);
-}
-.event-art svg {
-  width: 140px;
-  height: 105px;
-  stroke: #a57222;
-  stroke-width: 1.3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-}
-.mehndi-card .event-art {
-  background: radial-gradient(ellipse, #b7c1a950, transparent 70%);
-}
-.mehndi-card .event-art svg {
-  stroke: #61763e;
-}
-.sangeet-card .event-art {
-  background: radial-gradient(ellipse, #d4b0b54a, transparent 70%);
-}
-.sangeet-card .event-art svg {
-  stroke: #9a4469;
-}
 .event-time {
   font-size: 9px;
   letter-spacing: 1.6px;
   color: #795d3d;
 }
 .event-card h3 {
-  font-size: 34px;
-  margin: 11px 0 15px;
+  font-size: 32px;
+  margin: 8px 0 12px;
 }
 .event-card > p:not(.event-time) {
   font-size: 13px;
-  line-height: 1.9;
+  line-height: 1.8;
   max-width: 250px;
   flex-grow: 1;
-}
-.event-detail {
-  border-top: 1px solid #ddcfb8;
-  margin-top: 26px;
-  padding-top: 17px;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 17px;
-  color: #796044;
-  width: 100%;
-}
-.event-symbol {
-  height: 118px;
-  font-family: var(--serif);
-  font-size: 93px;
-  line-height: 1.1;
-  color: var(--gold);
-  margin-bottom: 18px;
 }
 .schedule-note {
   text-align: center;
   font-size: 11px;
   margin-top: 27px;
   letter-spacing: 0.2px;
-}
-.destination {
-  position: relative;
-  min-height: 640px;
-  isolation: isolate;
-  overflow: hidden;
-  background: #283e36;
-  color: var(--paper);
-  display: flex;
-  align-items: center;
-}
-.destination-art {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background: url("assets/dehradun-watercolor.jpg") center 88% / cover no-repeat;
-  filter: saturate(1.1);
-}
-.destination::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    90deg,
-    #182f2be8 0%,
-    #253f35bb 45%,
-    #253f3510 100%
-  );
-}
-.destination-copy {
-  padding: 90px 9%;
-  width: 100%;
-}
-.destination-copy .eyebrow {
-  color: #deccb0;
-}
-.destination h2 {
-  color: #fff7e8;
-  font-size: clamp(48px, 5.5vw, 80px);
-  margin: 23px 0;
-}
-.destination-copy > p:not(.eyebrow) {
-  color: #ede5d4;
-  font-size: 14px;
-  line-height: 1.9;
-}
-.destination-place {
-  display: inline-flex;
-  gap: 11px;
-  align-items: center;
-  margin-top: 28px;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #e4cfab;
-}
-.destination-place svg {
-  width: 17px;
-  height: 20px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.2;
-}
-.destination-caption {
-  position: absolute;
-  bottom: 25px;
-  inset-inline: 4%;
-  display: flex;
-  justify-content: space-between;
-  font-size: 8px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #fff8e3;
-  border-top: 1px solid #fff3;
-  padding-top: 17px;
 }
 .doon-keepsake {
   max-width: 1220px;
@@ -900,12 +729,6 @@ h1 em {
   font-size: 8px;
   letter-spacing: 1.8px;
 }
-.keepsake-copy > span:last-child {
-  display: block;
-  font: italic 23px/1.3 var(--serif);
-  color: var(--wine);
-  margin-top: 12px;
-}
 .doon-keepsake.visible .landmark img {
   animation: sketch-reveal 1.8s ease-out both;
 }
@@ -932,7 +755,7 @@ h1 em {
 }
 .guide-grid {
   max-width: 900px;
-  margin: 59px auto 0;
+  margin: 30px auto 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -964,142 +787,16 @@ h1 em {
   font-weight: 500;
   color: #5f594e;
 }
-.guide-footnote {
-  margin-top: 24px;
-}
-.guide-footnote {
-  display: block;
-  font-family: var(--serif);
-  font-size: 19px;
-  font-style: italic;
-  color: #796044;
-}
-.venue-note {
-  max-width: 1120px;
-  margin: 60px auto 0;
-  display: flex;
-  align-items: center;
-  gap: 27px;
-  padding: 29px 36px;
-  background: #f7e8db;
-  border: 1px solid var(--line);
-}
-.venue-icon {
-  font-size: 42px;
-  color: var(--gold);
-  line-height: 1;
-}
-.venue-note h3 {
-  font-size: 28px;
-  margin-bottom: 6px;
-}
-.venue-note p {
-  font-size: 12px;
-  max-width: 680px;
-  line-height: 1.8;
-}
-.venue-note .text-link {
-  margin-left: auto;
-  white-space: nowrap;
-}
-.faq {
-  max-width: 800px;
-  margin: 75px auto 0;
-}
-.faq > h3 {
-  text-align: center;
-  font-size: 29px;
-  margin-bottom: 27px;
-}
-.faq details {
-  border-bottom: 1px solid var(--line);
-}
-.faq summary {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  align-items: center;
-  padding: 20px 0;
-  cursor: pointer;
-  font-size: 13px;
-  color: #544a3b;
-}
-.faq summary::-webkit-details-marker {
-  display: none;
-}
-.faq summary span {
-  font-size: 19px;
-  font-weight: 400;
-  color: var(--gold);
-  transition: transform 0.25s;
-}
-.faq details[open] summary span {
-  transform: rotate(45deg);
-}
-.faq details p {
-  font-size: 13px;
-  line-height: 1.9;
-  padding: 0 36px 22px 0;
-}
 .closing {
   background: linear-gradient(125deg, #f7dfd5, #faecd7 50%, #f3dfeb);
   text-align: center;
   border-block: 1px solid #dac9ae;
   position: relative;
   overflow: hidden;
-}
-.closing::before,
-.closing::after {
-  content: "❦";
-  position: absolute;
-  left: -30px;
-  bottom: -65px;
-  pointer-events: none;
-  font-family: var(--serif);
-  font-size: 280px;
-  color: #a78d6820;
-  transform: rotate(24deg);
-}
-.closing::after {
-  left: auto;
-  right: -30px;
-  transform: rotate(-24deg) scaleX(-1);
-}
-.closing-flower {
-  font-size: 58px;
-  line-height: 1;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 26px;
-}
-.closing h2 {
-  font-size: clamp(36px, 4vw, 56px);
-  margin: 20px 0;
+  padding-block: 48px;
 }
 .closing > p:not(.eyebrow) {
   font-size: 14px;
-}
-.closing .button {
-  margin-top: 29px;
-  position: relative;
-  z-index: 1;
-}
-.closing-names {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 500;
-  color: var(--wine);
-  font-size: 55px;
-  line-height: 1.4;
-  margin: 49px 0 3px;
-}
-.closing-names span {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 35px;
-  color: var(--gold);
-  padding-inline: 7px;
 }
 .closing > .eyebrow:last-child {
   font-size: 8px;
@@ -1131,6 +828,108 @@ footer a span {
   opacity: 1;
   transform: none;
 }
+.event-art,
+.aipan-mark {
+  background-image: url("assets/ceremony-watercolors.webp");
+  background-size: 400% 200%;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+}
+.event-art {
+  display: block;
+  width: 126px;
+  aspect-ratio: 1;
+  flex: none;
+  margin: 0 auto 12px;
+}
+.event-art-haldi {
+  background-position: 0 0;
+}
+.event-art-mehndi {
+  background-position: 33.333333% 0;
+}
+.event-art-sangeet {
+  background-position: 66.666667% 0;
+}
+.event-art-tilak {
+  background-position: 100% 0;
+}
+.event-art-baraat {
+  background-image: url("assets/baraat-vintage-car.jpg");
+  background-size: contain;
+  background-position: center;
+}
+.event-art-pheras {
+  background-position: 33.333333% 100%;
+}
+.event-art-jaimala {
+  background-position: 66.666667% 100%;
+}
+.aipan-mark {
+  display: block;
+  width: 76px;
+  aspect-ratio: 1;
+  margin: 0 auto 20px;
+  background-position: 100% 100%;
+}
+.morning-card {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-areas: "art time" "art title";
+  grid-template-columns: 82px auto;
+  column-gap: 22px;
+  justify-content: center;
+  padding: 16px 24px;
+  text-align: left;
+}
+.morning-card .event-art {
+  grid-area: art;
+  width: 82px;
+  margin: 0;
+}
+.morning-card .event-time {
+  grid-area: time;
+  align-self: end;
+}
+.morning-card h3 {
+  grid-area: title;
+  align-self: start;
+  font-size: 30px;
+  margin: 5px 0 0;
+}
+.keepsake-copy h2 {
+  font-size: 43px;
+  margin-top: 15px;
+}
+.venue-pending {
+  max-width: 900px;
+  margin: 26px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  text-align: center;
+  color: var(--wine);
+}
+.closing-names {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(32px, 4.5vw, 54px);
+  line-height: 1.2;
+  color: var(--wine);
+  letter-spacing: -0.8px;
+  margin: 0 0 14px;
+}
+.closing-names span {
+  font-size: 0.7em;
+  font-weight: 400;
+  padding-inline: 8px;
+  color: var(--gold);
+}
+.closing > .eyebrow:last-child {
+  margin-top: 13px;
+}
+
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -1194,9 +993,6 @@ footer a span {
   h1 {
     margin-top: 20px;
   }
-  .hero-message {
-    font-size: 25px;
-  }
 }
 @media (max-width: 1050px) {
   .site-header nav {
@@ -1237,17 +1033,13 @@ footer a span {
   .guide-note h3 {
     font-size: 27px;
   }
-  .venue-note {
-    padding-inline: 25px;
-    gap: 20px;
-  }
 }
 @media (max-width: 760px) {
   html {
     scroll-padding-top: 18px;
   }
   .section-pad {
-    padding: 76px 24px;
+    padding: 56px 24px;
   }
   .site-header {
     height: 73px;
@@ -1275,7 +1067,7 @@ footer a span {
     width: 48px;
   }
   .hero {
-    height: 950px;
+    height: 900px;
     min-height: 0;
     max-height: none;
   }
@@ -1310,10 +1102,6 @@ footer a span {
   h1 span:last-child {
     padding-right: 12px;
   }
-  .hero-message {
-    font-size: 19px;
-    margin-top: 22px;
-  }
   .hero-date {
     flex-wrap: wrap;
     gap: 0;
@@ -1339,10 +1127,6 @@ footer a span {
     min-height: 48px;
     padding: 12px 24px;
     font-size: 9px;
-  }
-  .weekend-note {
-    font-size: 14px;
-    margin-top: 14px;
   }
   .hero-side-note {
     display: none;
@@ -1382,10 +1166,10 @@ footer a span {
   }
   .invitation {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 32px;
   }
   .couple-portrait {
-    max-width: 300px;
+    max-width: 280px;
   }
   .invitation-copy {
     max-width: 510px;
@@ -1422,76 +1206,20 @@ footer a span {
     gap: 17px;
   }
   .event-card {
-    padding: 19px 28px 25px;
-  }
-  .event-art {
-    height: 100px;
-    margin-bottom: 11px;
-  }
-  .event-art svg {
-    height: 90px;
+    padding: 20px 24px 24px;
   }
   .event-card h3 {
-    font-size: 34px;
-    margin-bottom: 12px;
+    font-size: 31px;
+    margin-bottom: 10px;
   }
   .event-card > p:not(.event-time) {
     max-width: 280px;
-  }
-  .event-detail {
-    margin-top: 21px;
-    padding-top: 14px;
-    font-size: 17px;
-  }
-  .event-symbol {
-    height: 100px;
-    font-size: 88px;
-    margin-bottom: 11px;
   }
   .schedule-note {
     font-size: 10px;
     line-height: 1.9;
     max-width: 350px;
     margin: 24px auto 0;
-  }
-  .destination {
-    min-height: 660px;
-    align-items: flex-start;
-  }
-  .destination-art {
-    background-size: auto 100%;
-    background-position: 68% bottom;
-  }
-  .destination::after {
-    background: linear-gradient(
-      180deg,
-      #203a32f2 0%,
-      #263d33c9 50%,
-      #263d3326 100%
-    );
-  }
-  .destination-copy {
-    padding: 72px 27px;
-  }
-  .destination h2 {
-    font-size: 57px;
-    letter-spacing: -1px;
-  }
-  .destination-copy .eyebrow {
-    font-size: 8px;
-    letter-spacing: 2.5px;
-  }
-  .destination-copy > p:not(.eyebrow) {
-    font-size: 13px;
-  }
-  .destination-caption {
-    inset-inline: 24px;
-    bottom: 22px;
-    font-size: 7px;
-    letter-spacing: 1.3px;
-  }
-  .destination-caption > span:last-child {
-    display: none;
   }
   .doon-keepsake {
     grid-template-columns: 1fr 1.5fr;
@@ -1529,64 +1257,9 @@ footer a span {
   .guide-note p {
     font-size: 14px;
   }
-  .guide-footnote {
-    margin-top: 17px;
-  }
-  .venue-note {
-    margin-top: 39px;
-    padding: 25px 22px;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 16px;
-  }
-  .venue-icon {
-    font-size: 32px;
-  }
-  .venue-note > div {
-    flex: 1;
-    min-width: 180px;
-  }
-  .venue-note h3 {
-    font-size: 27px;
-  }
-  .venue-note .text-link {
-    margin-left: 47px;
-  }
-  .faq {
-    margin-top: 51px;
-  }
-  .faq > h3 {
-    font-size: 30px;
-    text-align: left;
-    margin-bottom: 16px;
-  }
-  .faq summary {
-    font-size: 13px;
-    padding: 19px 0;
-  }
-  .closing h2 {
-    font-size: 36px;
-  }
   .closing > .eyebrow {
     font-size: 8px;
     letter-spacing: 2px;
-  }
-  .closing-names {
-    font-size: clamp(32px, 9.5vw, 48px);
-    margin-top: 40px;
-  }
-  .closing-names span {
-    font-size: 29px;
-    padding: 0;
-  }
-  .closing .button {
-    font-size: 9px;
-    padding: 14px 23px;
-  }
-  .closing::before,
-  .closing::after {
-    font-size: 190px;
-    bottom: -40px;
   }
   .closing > p:not(.eyebrow) {
     font-size: 13px;
@@ -1607,13 +1280,10 @@ footer a span {
     gap: 14px;
   }
   .hero {
-    height: 920px;
+    height: 870px;
   }
   .hero-content {
     padding-top: 128px;
-  }
-  .hero-message {
-    font-size: 17px;
   }
   .day-button {
     min-width: 135px;
@@ -1626,6 +1296,46 @@ footer a span {
     font-size: 37px;
   }
 }
+@media (max-width: 760px) {
+  .hero-art {
+    background-image: url("assets/dehradun-mobile.jpg");
+    background-position: right bottom;
+    background-size: cover;
+  }
+  .event-art {
+    width: 108px;
+    margin-bottom: 8px;
+  }
+  .morning-card {
+    grid-template-columns: 64px minmax(0, 1fr);
+    column-gap: 14px;
+    padding: 14px 20px;
+  }
+  .morning-card .event-art {
+    width: 64px;
+  }
+  .morning-card h3 {
+    font-size: 25px;
+    line-height: 1.1;
+    margin: 4px 0 0;
+  }
+  .keepsake-copy h2 {
+    font-size: 38px;
+    margin-top: 12px;
+  }
+  .guide-grid {
+    margin-top: 24px;
+    gap: 24px;
+  }
+  .aipan-mark {
+    width: 64px;
+    margin-bottom: 16px;
+  }
+  .closing {
+    padding-block: 36px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
