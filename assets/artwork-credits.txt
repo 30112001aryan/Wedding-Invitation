@@ -62,7 +62,20 @@ ceremony-watercolors.webp contains the event motifs and Aipan-inspired art.
 baraat-vintage-car.jpg replaces the horse motif for the Baraat, matching the
 family's planned vintage wedding car and the watercolor illustration style.
 
-PAHADI JHAROKHA COVER
+FULL-SCREEN PAHADI DOORWAY
+Original edge-to-edge timber doorway artwork generated with the built-in
+OpenAI ImageGen tool, using our earlier jharokha as a carving-style reference.
+Website asset: pahadi-doorway.jpg
+The carved border is fitted to the screen with CSS border-image slices.
+
+COVER TYPOGRAPHY
+Cormorant Semibold Italic, by Christian Thalmann / the Cormorant project.
+Official font distribution: https://fonts.google.com/specimen/Cormorant
+Website asset: fonts/cormorant-italic-semibold.woff2
+SIL Open Font License 1.1: fonts/cormorant-OFL.txt
+Fonts are served locally; guest browsers make no Google Fonts requests.
+
+PAHADI JHAROKHA COVER (EARLIER VERSION)
 Original watercolor-style artwork generated with OpenAI ImageGen for this
 invitation, inspired by Uttarakhand's Likhai woodcarving tradition. The two
 shutters animate independently using crops of the shared illustration.

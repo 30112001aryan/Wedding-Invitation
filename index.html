@@ -53,8 +53,9 @@
       media="(max-width: 760px)"
       fetchpriority="high"
     />
-    <link rel="preload" href="assets/pahadi-jharokha.png" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20261127-door-reveal" />
+    <link rel="preload" href="assets/pahadi-doorway.jpg" as="image" />
+    <link rel="preload" href="assets/fonts/cormorant-italic-semibold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css?v=20261127-readable-cover-2" />
     <script src="app.js?v=20261127-door-reveal" type="module"></script>
     <noscript
       ><style>
@@ -71,21 +72,25 @@
   <body>
     <dialog class="welcome-cover" id="welcome-cover" aria-label="A wedding invitation from Saksham and Ayushi">
       <div class="cover-backdrop" aria-hidden="true"></div>
-      <div class="welcome-address">
-        <p class="eyebrow">You’re invited</p>
-        <h2>Saksham <em>&</em> Ayushi</h2>
-        <p class="welcome-date">16 January 2027 <span>·</span> Dehradun</p>
-      </div>
       <div class="jharokha-stage">
-        <img class="jharokha-frame" src="assets/pahadi-jharokha.png" alt="" />
-        <div class="jharokha-door jharokha-left" aria-hidden="true"><img src="assets/pahadi-jharokha.png" alt="" /></div>
-        <div class="jharokha-door jharokha-right" aria-hidden="true"><img src="assets/pahadi-jharokha.png" alt="" /></div>
+        <div class="jharokha-frame" aria-hidden="true"></div>
+        <div class="jharokha-door jharokha-left" aria-hidden="true"><img src="assets/pahadi-doorway.jpg" alt="" /></div>
+        <div class="jharokha-door jharokha-right" aria-hidden="true"><img src="assets/pahadi-doorway.jpg" alt="" /></div>
+        <div class="welcome-address">
+          <p class="eyebrow">You’re invited</p>
+          <h2><span>Saksham</span> <em>&</em> <span>Ayushi</span></h2>
+          <p class="welcome-date">
+            <span>16 January 2027</span>
+            <span class="welcome-date-divider" aria-hidden="true">·</span>
+            <span>Dehradun</span>
+          </p>
+        </div>
         <button class="welcome-seal" id="open-invitation" type="button" autofocus>
           <span class="seal-logo" aria-hidden="true"><img src="assets/monogram.jpg" alt="" /></span>
           <span class="seal-label">Open invitation</span>
         </button>
+        <p class="welcome-recipient" id="cover-recipient">For our family & friends</p>
       </div>
-      <p class="welcome-recipient" id="cover-recipient">For our family & friends</p>
     </dialog>
     <a class="skip-link" href="#main">Skip to invitation</a>
     <header class="site-header">
