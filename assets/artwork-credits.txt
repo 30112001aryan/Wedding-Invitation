@@ -39,3 +39,21 @@ Original illustrations created with OpenAI ImageGen for this invitation.
 ceremony-watercolors.webp contains the event motifs and Aipan-inspired art.
 baraat-vintage-car.jpg replaces the horse motif for the Baraat, matching the
 family's planned vintage wedding car and the watercolor illustration style.
+
+PAHADI JHAROKHA COVER
+Original watercolor-style artwork generated with OpenAI ImageGen for this
+invitation, inspired by Uttarakhand's Likhai woodcarving tradition. The two
+shutters animate independently using crops of the shared illustration.
+Website asset: pahadi-jharokha.png
+The seal uses the family's supplied monogram.jpg, cropped and tinted in CSS;
+the logo's shape has not been redrawn or altered with AI.
+
+BACKGROUND MUSIC
+"Bansuri Flute & Sitar – Bhairav Raga for Deep Relaxation" by boopul.
+Source: https://pixabay.com/music/meditationspiritual-bansuri-flute-amp-sitar-bhairav-raga-for-deep-relaxation-538695/
+Licensed under the Pixabay Content License, accessed 27 November 2026:
+https://pixabay.com/service/license-summary/
+Excerpt: 2:00–3:20, with reduced volume, four-second fades and AAC encoding.
+Website asset: wedding-instrumental.m4a
+The source labels this track as AI generated. The music is incorporated
+into this invitation; it is not offered as a standalone music download.

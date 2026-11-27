@@ -53,8 +53,9 @@
       media="(max-width: 760px)"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="app.js" type="module"></script>
+    <link rel="preload" href="assets/pahadi-jharokha.png" as="image" />
+    <link rel="stylesheet" href="styles.css?v=20261127-jharokha" />
+    <script src="app.js?v=20261127-jharokha" type="module"></script>
     <noscript
       ><style>
         #day-16[hidden] {
@@ -68,6 +69,24 @@
     >
   </head>
   <body>
+    <dialog class="welcome-cover" id="welcome-cover" aria-label="A wedding invitation from Saksham and Ayushi">
+      <div class="cover-backdrop" aria-hidden="true"></div>
+      <div class="welcome-address">
+        <p class="eyebrow">You’re invited</p>
+        <h2>Saksham <em>&</em> Ayushi</h2>
+        <p class="welcome-date">16 January 2027 <span>·</span> Dehradun</p>
+      </div>
+      <div class="jharokha-stage">
+        <img class="jharokha-frame" src="assets/pahadi-jharokha.png" alt="" />
+        <div class="jharokha-door jharokha-left" aria-hidden="true"><img src="assets/pahadi-jharokha.png" alt="" /></div>
+        <div class="jharokha-door jharokha-right" aria-hidden="true"><img src="assets/pahadi-jharokha.png" alt="" /></div>
+        <button class="welcome-seal" id="open-invitation" type="button" autofocus>
+          <span class="seal-logo" aria-hidden="true"><img src="assets/monogram.jpg" alt="" /></span>
+          <span class="seal-label">Open invitation</span>
+        </button>
+      </div>
+      <p class="welcome-recipient" id="cover-recipient">For our family & friends</p>
+    </dialog>
     <a class="skip-link" href="#main">Skip to invitation</a>
     <header class="site-header">
       <a
@@ -104,7 +123,7 @@
         </div>
         <div class="hero-content">
           <p class="eyebrow hero-eyebrow">Together with our families</p>
-          <h1 id="couple-names">
+          <h1 id="couple-names" tabindex="-1">
             <span>Saksham</span><em>&</em><span>Ayushi</span>
           </h1>
           <div class="hero-date">
@@ -339,8 +358,27 @@
       </section>
     </main>
     <footer>
-      <a href="assets/artwork-credits.txt">Artwork credits</a
+      <a href="assets/artwork-credits.txt">Music & artwork credits</a
       ><a href="#home">Back to top <span aria-hidden="true">↑</span></a>
     </footer>
+    <audio id="invitation-music" preload="auto" loop playsinline controls>
+      <source src="assets/wedding-instrumental.m4a" type="audio/mp4" />
+    </audio>
+    <button
+      class="music-toggle"
+      id="music-toggle"
+      type="button"
+      aria-controls="invitation-music"
+      aria-label="Unmute music"
+      aria-pressed="true"
+      title="Unmute music"
+      hidden
+    >
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 5 6 9H3v6h3l5 4V5Z" />
+        <path class="sound-waves" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14" />
+        <path class="sound-off" d="m16 9 5 6m0-6-5 6" />
+      </svg>
+    </button>
   </body>
 </html>

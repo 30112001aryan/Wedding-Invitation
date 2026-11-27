@@ -115,6 +115,9 @@ p {
   outline: 2px solid var(--wine);
   outline-offset: 6px;
 }
+#couple-names:focus {
+  outline: none;
+}
 .skip-link {
   position: fixed;
   top: 0;
@@ -1334,6 +1337,256 @@ footer a span {
   .closing {
     padding-block: 36px;
   }
+}
+
+.invitation-closed {
+  overflow: hidden;
+}
+.welcome-cover {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: transparent;
+  color: var(--wine);
+}
+.welcome-cover:not([open]) {
+  display: none;
+}
+.welcome-cover::backdrop {
+  background: transparent;
+}
+.cover-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(#fff8eefc, #fff8eef5 44%, #fff8eeb8 76%, #fff8ee88),
+    url("assets/dehradun-watercolor.jpg") center bottom / cover;
+  transition: opacity 0.9s ease 0.35s;
+}
+.welcome-address {
+  position: absolute;
+  top: clamp(28px, 5svh, 54px);
+  left: 18px;
+  right: 18px;
+  text-align: center;
+}
+.welcome-address .eyebrow {
+  margin-bottom: 10px;
+  font-size: 8px;
+  letter-spacing: 3.5px;
+}
+.welcome-address h2 {
+  font-size: clamp(34px, 4.2vw, 60px);
+  line-height: 1.2;
+}
+.welcome-address h2 em {
+  padding-inline: 5px;
+  font-size: 0.72em;
+  color: var(--gold);
+}
+.welcome-date {
+  margin-top: 10px;
+  font: 9px/1.8 var(--sans);
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #8c7250;
+}
+.welcome-date span {
+  padding-inline: 9px;
+}
+.jharokha-stage {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  width: min(48svh, 450px, calc(100vw - 36px));
+  aspect-ratio: 3 / 4;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+}
+.jharokha-frame {
+  width: 100%;
+  height: 100%;
+  /* The rectangle follows the shutter edges in the shared 3:4 illustration. */
+  clip-path: polygon(evenodd, 0 0, 100% 0, 100% 100%, 0 100%, 0 0,
+    24.25% 29.25%, 24.25% 79.15%, 75.75% 79.15%, 75.75% 29.25%, 24.25% 29.25%);
+  transition: opacity 0.75s ease 0.9s;
+}
+.jharokha-door {
+  position: absolute;
+  top: 29.25%;
+  width: 25.75%;
+  height: 49.9%;
+  overflow: hidden;
+  background: #75452e;
+  backface-visibility: hidden;
+  transition: transform 1.5s cubic-bezier(0.55, 0.05, 0.2, 1) 0.15s;
+}
+.jharokha-door img {
+  position: absolute;
+  top: -58.6172%;
+  width: 388.3495%;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+}
+.jharokha-left {
+  left: 24.25%;
+  transform-origin: left center;
+}
+.jharokha-left img {
+  left: -94.1748%;
+}
+.jharokha-right {
+  right: 24.25%;
+  transform-origin: right center;
+}
+.jharokha-right img {
+  left: -194.1748%;
+}
+.welcome-seal {
+  position: absolute;
+  top: 58.5%;
+  left: 50%;
+  width: clamp(68px, 10.5svh, 92px);
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 48% 52% 49% 51% / 52% 46% 54% 48%;
+  background: radial-gradient(circle at 32% 25%, #ad4d60, #822d46 54%, #562337);
+  box-shadow: inset 0 0 0 2px #ba6b7866, inset 0 0 0 6px #61273935,
+    inset 2px 3px 6px #f4ba9a60, 0 3px 0 #562337, 0 9px 20px #2f190d66;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: transform 0.4s ease, opacity 0.35s ease;
+}
+.welcome-seal::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid #e0a78c88;
+  border-radius: 50%;
+  box-shadow: 0 1px 1px #42172988;
+}
+.welcome-seal:hover {
+  transform: translate(-50%, -50%) rotate(-5deg) scale(1.04);
+}
+.welcome-seal:focus-visible {
+  outline-color: #dbb77d;
+  outline-offset: 5px;
+}
+.seal-logo {
+  position: absolute;
+  width: 68%;
+  height: 54%;
+  left: 16%;
+  top: 21%;
+  overflow: hidden;
+  mix-blend-mode: screen;
+}
+.seal-logo img {
+  position: absolute;
+  width: 129.6%;
+  max-width: none;
+  height: auto;
+  left: -14.5%;
+  top: -91.5%;
+  filter: grayscale(1) invert(1) contrast(1.6);
+}
+.seal-label {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: #fff3d9;
+  font: 500 10px var(--sans);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 4px #402512;
+}
+.welcome-recipient {
+  position: absolute;
+  bottom: clamp(23px, 5svh, 48px);
+  left: 24px;
+  right: 24px;
+  text-align: center;
+  color: #816647;
+  font: italic 21px/1.5 var(--serif);
+  overflow-wrap: anywhere;
+}
+.welcome-address,
+.welcome-recipient {
+  transition: opacity 0.35s ease;
+}
+.is-opening .jharokha-left {
+  transform: rotateY(-105deg);
+}
+.is-opening .jharokha-right {
+  transform: rotateY(105deg);
+}
+.is-opening .welcome-seal {
+  transform: translate(-50%, -65%) rotate(-10deg) scale(1.12);
+  opacity: 0;
+  pointer-events: none;
+}
+.is-opening .welcome-address,
+.is-opening .welcome-recipient,
+.is-opening .jharokha-frame,
+.is-opening .cover-backdrop {
+  opacity: 0;
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .welcome-address {
+    top: 31%;
+    left: 5%;
+    right: auto;
+    width: 40%;
+  }
+  .welcome-address .eyebrow { font-size: 7px; margin-bottom: 8px; }
+  .welcome-address h2 { font-size: 32px; }
+  .welcome-date { margin-top: 9px; font-size: 7px; letter-spacing: 1px; }
+  .jharokha-stage { left: 73%; top: 50%; width: 60svh; }
+  .welcome-seal { width: 60px; }
+  .seal-label { top: calc(100% + 13px); font-size: 6px; letter-spacing: 1px; }
+  .welcome-recipient { left: 5%; right: auto; width: 40%; bottom: 24%; font-size: 17px; }
+}
+
+.music-toggle {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 1px solid #d8c2a2;
+  border-radius: 50%;
+  background: #fff8eef5;
+  color: var(--wine);
+  box-shadow: 0 3px 18px #60243a15;
+  cursor: pointer;
+}
+.music-toggle[hidden] {
+  display: none;
+}
+.music-toggle:hover {
+  background: var(--wine);
+  color: var(--paper);
+  border-color: var(--wine);
+}
+.music-toggle[aria-pressed="false"] .sound-off,
+.music-toggle[aria-pressed="true"] .sound-waves {
+  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

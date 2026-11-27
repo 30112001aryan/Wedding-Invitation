@@ -22,6 +22,8 @@ Personalise a guest's greeting with `?n=Anita%20%26%20family`. The greeting is i
 - Day selectors, India-time countdown and a single calendar download.
 - Watercolor ceremony motifs, a decorated vintage car for the Baraat and an Aipan-inspired closing accent.
 - Dedicated mobile mandap artwork that keeps the full pavilion visible.
+- A Pahadi jharokha with Likhai-inspired woodcarving opens its shutters when guests click the wax seal bearing the family's supplied monogram. That tap starts the music with a four-second fade-in; a small speaker icon then controls mute/unmute. The locally hosted 80-second middle excerpt has reduced volume and four-second fades. Source and licence are in `assets/artwork-credits.txt`.
+- The cover supports keyboard activation, Escape dismissal and reduced-motion settings. Without JavaScript, the invitation remains available directly with native audio controls.
 - Mobile layouts, keyboard focus styles and a skip link.
 
 ## Before sharing with guests

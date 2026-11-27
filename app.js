@@ -18,9 +18,54 @@ export function guestName(search) {
 }
 
 if (typeof document !== "undefined") {
+  const music = document.getElementById("invitation-music");
+  const musicToggle = document.getElementById("music-toggle");
+  const syncMusic = () => {
+    const silent = music.muted || music.paused;
+    const label = silent ? "Unmute music" : "Mute music";
+    musicToggle.setAttribute("aria-pressed", String(silent));
+    musicToggle.setAttribute("aria-label", label);
+    musicToggle.title = label;
+  };
+  music.volume = 0.4;
+  music.controls = false;
+  syncMusic();
+  for (const event of ["playing", "pause", "volumechange", "error"]) {
+    music.addEventListener(event, syncMusic);
+  }
+  musicToggle.addEventListener("click", () => {
+    const silent = music.muted || music.paused;
+    music.muted = !silent;
+    if (silent) music.play().catch(syncMusic);
+    syncMusic();
+  });
+  const welcomeCover = document.getElementById("welcome-cover");
+  const openInvitation = document.getElementById("open-invitation");
+  if (typeof welcomeCover.showModal === "function") {
+    document.documentElement.classList.add("invitation-closed");
+    welcomeCover.showModal();
+    welcomeCover.addEventListener("close", () => {
+      document.documentElement.classList.remove("invitation-closed");
+      musicToggle.hidden = false;
+      document.getElementById("couple-names").focus({ preventScroll: true });
+    });
+    openInvitation.addEventListener("click", () => {
+      // Start within the seal's click so mobile browsers allow the audio.
+      music.play().catch(syncMusic);
+      openInvitation.disabled = true;
+      welcomeCover.classList.add("is-opening");
+      setTimeout(() => welcomeCover.close(),
+        matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 1800);
+    }, { once: true });
+  } else {
+    musicToggle.hidden = false;
+  }
+
   const name = guestName(location.search);
-  if (name)
+  if (name) {
     document.getElementById("guest-greeting").textContent = `Dear ${name},`;
+    document.getElementById("cover-recipient").textContent = `For ${name}`;
+  }
 
   const updateCountdown = () => {
     const now = Date.now();

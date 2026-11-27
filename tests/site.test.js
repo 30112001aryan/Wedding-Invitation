@@ -3,6 +3,22 @@ import { test } from "node:test";
 import { readFileSync } from "node:fs";
 import { remainingTime, guestName, weddingDay } from "../app.js";
 
+test("music waits for the invitation seal and retains an accessible speaker control", () => {
+  const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
+  const audio = html.match(/<audio\b[^>]*>/)?.[0];
+  assert.ok(audio);
+  assert.doesNotMatch(audio, /\bautoplay\b/);
+  assert.match(audio, /\bloop\b/);
+  assert.match(html, /<dialog\b[^>]*id="welcome-cover"/);
+  assert.match(html, /id="open-invitation"[^>]*type="button"/);
+  assert.match(html, /class="seal-label">Open invitation</);
+  assert.match(html, /class="seal-logo"[^>]*>[\s\S]*?assets\/monogram\.jpg/);
+  assert.match(html, /aria-controls="invitation-music"/);
+  assert.match(html, /aria-label="Unmute music"/);
+  assert.match(html, /class="sound-off"/);
+  assert.ok(readFileSync(new URL("../assets/wedding-instrumental.m4a", import.meta.url)).length > 0);
+});
+
 test("countdown uses the India wedding date and stops at zero", () => {
   assert.equal(new Date(weddingDay).toISOString(), "2027-01-15T18:30:00.000Z");
   assert.deepEqual(
