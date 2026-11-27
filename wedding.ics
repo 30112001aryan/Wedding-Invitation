@@ -5,26 +5,35 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:20270115-celebrations@saksham-ayushi.invitation
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261127T035905Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270115
 DTEND;VALUE=DATE:20270116
 SUMMARY:Saksham & Ayushi - Wedding Celebrations
 LOCATION:Dehradun\, Uttarakhand\, India
-DESCRIPTION:Haldi\, Mehndi & Bhaat\, and Sangeet. Venue to be confirmed.\nT
- imes are provisional. Please check the invitation for final details.
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
+DESCRIPTION:11:00 AM: Morning Puja\n11:45 AM: Baan & Haldi\n1:30 PM: Lunch\
+ n3:00 PM: Bhaat Bharna & Mehndi\n7:00–10:00 PM: Sangeet & Dinner\nVenue 
+ to be confirmed. Timings are provisional.
 END:VEVENT
 BEGIN:VEVENT
 UID:20270116-wedding@saksham-ayushi.invitation
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261127T035905Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270116
 DTEND;VALUE=DATE:20270117
 SUMMARY:Saksham & Ayushi - Wedding Day
 LOCATION:Dehradun\, Uttarakhand\, India
-DESCRIPTION:Join our families for Saksham and Ayushi's wedding.\nVenue to b
- e confirmed. Please check the invitation for final details.
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
+DESCRIPTION:Hotel timings: Breakfast\n12:00–1:30 PM: Lunch & Saafa Bandhi
+ \n1:00–2:45 PM: Pagri\, Ghudchadhi & Photographs\n2:45 PM: Baraat Depart
+ ure\n2:45–4:15 PM: Temple Visit\, Procession & Venue Entry\n4:15–4:45 
+ PM: Milni & Welcome\n4:45–5:15 PM: Stage Pooja\n5:15–6:45 PM: Sacred P
+ heras\n7:00 PM: Dinner Opens\n7:30–8:30 PM: Jaimala & Photographs\nBy 10
+ :00 PM: Evening Celebrations Conclude\n10:00–10:45 PM: Tilak · Pre-Vida
+ i Rituals\n11:00 PM: Vidai\nVenue to be confirmed. Timings are provisional
+ .
 END:VEVENT
 END:VCALENDAR

@@ -768,6 +768,64 @@ h1 em {
   color: var(--gold);
   margin-bottom: 18px;
 }
+.full-schedule {
+  grid-column: 1 / -1;
+  margin-top: 14px;
+  padding: 0 30px;
+  background: #fff8eeb8;
+  border: 1px solid var(--line);
+}
+.full-schedule summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 0;
+  cursor: pointer;
+  font: 400 28px/1.3 var(--serif);
+  color: var(--wine);
+}
+.full-schedule summary::-webkit-details-marker {
+  display: none;
+}
+.schedule-toggle {
+  color: var(--gold);
+  font: 400 23px/1 var(--sans);
+  transition: transform 0.25s;
+}
+.full-schedule[open] .schedule-toggle {
+  transform: rotate(45deg);
+}
+.schedule-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+.schedule-list li {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 22px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.schedule-time {
+  padding-top: 2px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  color: var(--wine);
+}
+.schedule-list h4 {
+  margin: 0;
+  font: 500 25px/1.2 var(--serif);
+  color: var(--wine);
+}
+.schedule-list p {
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 6px;
+}
 .schedule-note {
   text-align: center;
   font-size: 11px;
@@ -1436,6 +1494,27 @@ footer a span {
     height: 100px;
     font-size: 88px;
     margin-bottom: 11px;
+  }
+  .full-schedule {
+    padding-inline: 18px;
+  }
+  .full-schedule summary {
+    font-size: 24px;
+  }
+  .schedule-list li {
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+    padding: 16px 0;
+  }
+  .schedule-time {
+    font-size: 9px;
+    letter-spacing: 0;
+  }
+  .schedule-list h4 {
+    font-size: 21px;
+  }
+  .schedule-list p {
+    font-size: 11px;
   }
   .schedule-note {
     font-size: 10px;
