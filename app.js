@@ -1,3 +1,65 @@
+// Set to true when the venue names and Google Maps links are ready to announce.
+export const SHOW_VENUES = false;
+// 1: both days; 2: 16 January, hotel and venue; 3: 16 January, venue only.
+export const GUEST_GROUP = 1;
+
+export function readInviteSettings(storage) {
+  const defaults = { guestGroup: GUEST_GROUP, showVenues: SHOW_VENUES };
+  try {
+    storage ??= typeof window === "undefined" ? undefined : window.sessionStorage;
+    const group = storage?.getItem("guestGroup");
+    const show = storage?.getItem("showVenues");
+    return {
+      guestGroup: ["1", "2", "3"].includes(group) ? Number(group) : defaults.guestGroup,
+      showVenues: show === "true" ? true : show === "false" ? false : defaults.showVenues,
+    };
+  } catch {
+    return defaults;
+  }
+}
+
+export function calendarForGroup(calendar, group) {
+  if (group === 1) return calendar;
+  return calendar.replace(/BEGIN:VEVENT\r?\n[\s\S]*?END:VEVENT\r?\n/g, (event) => {
+    if (event.includes("DTSTART;VALUE=DATE:20270115")) return "";
+    return group === 3
+      ? event.replace(/^DESCRIPTION:.*(?:\r?\n[ \t].*)*/m, "DESCRIPTION:Baraat welcome at 3:30 PM\\, Pheras\\, Dinner & Jaimala.")
+      : event;
+  });
+}
+
+export const venues = {
+  hotel: {
+    name: "Welcomhotel by ITC Hotels, Madhuban, Dehradun",
+    shortName: "Madhuban",
+    coordinates: [30.3389692, 78.0582251],
+    url: "https://maps.app.goo.gl/6eRzTdoQNGfgRrK2A",
+  },
+  wedding: {
+    name: "Regal Manor by Grand Dream",
+    shortName: "Regal Manor",
+    coordinates: [30.3812036, 78.0752597],
+    url: "https://maps.app.goo.gl/XsY1umToxdnqWJhc8",
+  },
+};
+
+export function setVenueVisibility(root, announced = SHOW_VENUES) {
+  if (announced) {
+    for (const link of root.querySelectorAll("[data-venue]")) {
+      const venue = venues[link.dataset.venue];
+      link.textContent = link.hasAttribute("data-venue-short") ? venue.shortName : venue.name;
+      link.href = venue.url;
+      link.setAttribute("aria-label", `View ${venue.name} on Google Maps`);
+    }
+  }
+  root.querySelectorAll("[data-venue-details]").forEach((element) => {
+    element.hidden = !announced;
+  });
+  root.querySelectorAll("[data-venue-pending]").forEach((element) => {
+    element.hidden = announced;
+  });
+}
+
 // The countdown marks the wedding date at midnight in India, not the ceremony time.
 export const weddingDay = Date.parse("2027-01-16T00:00:00+05:30");
 
@@ -38,6 +100,62 @@ export function openingGeometry(rect, width, height) {
 }
 
 if (typeof document !== "undefined") {
+  const { guestGroup, showVenues } = readInviteSettings();
+  setVenueVisibility(document, showVenues);
+  document.documentElement.dataset.guestGroup = String(guestGroup);
+  document.querySelectorAll("[data-groups]").forEach((element) => {
+    element.hidden = !element.dataset.groups.split(" ").includes(String(guestGroup));
+  });
+  document.querySelector(".day-switch").hidden = guestGroup !== 1;
+  document.getElementById("single-day").hidden = guestGroup === 1;
+  if (guestGroup === 3) {
+    document.querySelector(".baraat-card .event-time").textContent = "3:30 PM";
+    document.getElementById("venue-map-label").textContent = "Your way to the wedding";
+  }
+  if (showVenues) {
+    const block = document.querySelector(".venue-map-block");
+    const loadMap = () => import("./venue-map.js?v=20261128-map")
+      .then(({ initVenueMap }) => initVenueMap(document.getElementById("venue-map"), venues, guestGroup))
+      .catch(() => {
+        document.getElementById("venue-map").dataset.unavailable = "true";
+        block.querySelector(".venue-map-controls").hidden = true;
+        block.querySelector(".map-status").textContent = "Use the venue links below to open Google Maps.";
+      });
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          observer.disconnect();
+          loadMap();
+        }
+      }, { rootMargin: "150px" });
+      observer.observe(block);
+    } else {
+      loadMap();
+    }
+  }
+  if (guestGroup !== 1) {
+    document.getElementById("celebrations-label").textContent = "The wedding day";
+    document.getElementById("celebration-duration").textContent = "One day.";
+    document.getElementById("celebration-dates").textContent = "16 January 2027 · Dehradun";
+    document.getElementById("hotel-events").textContent = "16 January · Tilak & Saafa Bandhi and Baraat departure.";
+
+    const calendarLink = document.querySelector(".header-date");
+    calendarLink.hidden = true;
+    fetch(calendarLink.href)
+      .then((response) => {
+        if (!response.ok) throw new Error("Calendar unavailable");
+        return response.text();
+      })
+      .then((calendar) => {
+        const content = calendarForGroup(calendar, guestGroup);
+        calendarLink.href = URL.createObjectURL(new Blob([content], { type: "text/calendar;charset=utf-8" }));
+        calendarLink.download = "saksham-ayushi-wedding.ics";
+        calendarLink.setAttribute("aria-label", "Save the wedding date to your calendar");
+        calendarLink.hidden = false;
+      })
+      .catch(() => console.warn("Calendar download could not be loaded. Reload to try again."));
+  }
+
   const music = document.getElementById("invitation-music");
   const musicToggle = document.getElementById("music-toggle");
   const syncMusic = () => {
@@ -128,16 +246,18 @@ if (typeof document !== "undefined") {
   updateCountdown();
   setInterval(updateCountdown, 30_000);
 
-  document.querySelectorAll("[data-day]").forEach((button) => {
-    button.addEventListener("click", () => {
-      document.querySelectorAll("[data-day]").forEach((item) => {
-        const active = item === button;
-        item.classList.toggle("active", active);
-        item.setAttribute("aria-pressed", String(active));
-        document.getElementById(`day-${item.dataset.day}`).hidden = !active;
-      });
+  const selectDay = (day) => {
+    document.querySelectorAll("[data-day]").forEach((item) => {
+      const active = item.dataset.day === day;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+      document.getElementById(`day-${item.dataset.day}`).hidden = !active;
     });
+  };
+  document.querySelectorAll("[data-day]").forEach((button) => {
+    button.addEventListener("click", () => selectDay(guestGroup === 1 ? button.dataset.day : "16"));
   });
+  selectDay(guestGroup === 1 ? "15" : "16");
 
   if (
     "IntersectionObserver" in window &&

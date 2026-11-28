@@ -5,29 +5,28 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:20270115-celebrations@saksham-ayushi.invitation
-DTSTAMP:20261127T040701Z
-SEQUENCE:2
+DTSTAMP:20261128T115539Z
+SEQUENCE:3
 DTSTART;VALUE=DATE:20270115
 DTEND;VALUE=DATE:20270116
 SUMMARY:Saksham & Ayushi - Wedding Celebrations
 LOCATION:Dehradun\, Uttarakhand\, India
-DESCRIPTION:Haldi\, Mehndi & Bhaat\, and Sangeet. Venue to be confirmed.\nT
- imes are provisional. Please check the invitation for final details.
-STATUS:TENTATIVE
+DESCRIPTION:Haldi & Tel Baan\, Mehandi & Bhaat\, and Sangeet.\nSee the invi
+ tation for timings and venues.
+STATUS:CONFIRMED
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270116-wedding@saksham-ayushi.invitation
-DTSTAMP:20261127T040701Z
-SEQUENCE:2
+DTSTAMP:20261128T115539Z
+SEQUENCE:3
 DTSTART;VALUE=DATE:20270116
 DTEND;VALUE=DATE:20270117
 SUMMARY:Saksham & Ayushi - Wedding Day
 LOCATION:Dehradun\, Uttarakhand\, India
-DESCRIPTION:Morning: Tilak & Saafa Bandhi.\nJoin our families for Saksham a
- nd Ayushi's wedding.\nVenue to be confirmed. Please check the invitation f
- or final details.
-STATUS:TENTATIVE
+DESCRIPTION:Tilak & Saafa Bandhi\, The Baraat\, The Sacred Pheras\, and Din
+ ner & Jaimala.\nSee the invitation for timings and venues.
+STATUS:CONFIRMED
 TRANSP:TRANSPARENT
 END:VEVENT
 END:VCALENDAR

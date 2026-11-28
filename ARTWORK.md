@@ -1,5 +1,13 @@
 # Custom Dehradun illustration
 
+## Transparent family monogram
+
+Edited from the supplied `assets/monogram.jpg` with the built-in OpenAI ImageGen tool. Final asset: `assets/monogram-transparent.png`. Used without CSS cropping in the header and opening seal; the seal uses a white tint. The original source is retained.
+
+### Edit prompt
+
+Use case: background-extraction. Asset type: transparent wedding monogram for a website header. Edit target: the supplied image containing the family’s custom SA monogram. Extract ONLY the central intertwined S and A initials, its small flying bird, curved stems and leaves. Remove the paper background COMPLETELY to real alpha transparency. Remove the separate cursive 'Saksham & Ayushi' word line underneath. Preserve the distinctive drawing, exact S and A letter shapes, bird placement, decorative flourishes, stem loops and leaf shapes as faithfully as possible. Turn the whole extracted mark into a clean flat single-colour deep burgundy #822d46 silhouette, without the original brown paper texture or mottling. Slightly strengthen thin flourishes for legibility at a 56-pixel display size; bold elegant strokes with sharp smooth edges. No new ornaments. Entire complete monogram including all extremities must fit within a tight almost-square canvas with about 5 percent transparent padding on every side. No cropping, no frame, no circular background, no shadow, no white/cream patch, no checkerboard drawn into the image, no extra letters or words. Premium clean logo cutout.
+
 ## Full-screen Pahadi doorway cover
 
 Created with the built-in OpenAI ImageGen tool, using the previous jharokha artwork as a material/carving reference. Final website asset: `assets/pahadi-doorway.jpg` (1200 × 1200 JPEG). The carved frame uses 10% border-image slices, keeping its corners in proportion as it follows the screen edges; the wooden shutters fill the opening. The supplied monogram remains on the seal. Names use the locally hosted Cormorant Semibold Italic font, and the family message sits in contrasting ivory within the lower door panel. The existing synchronized camera/aperture reveal opens into the invitation.
